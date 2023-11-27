@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://dqa62rm1skwfr"]
+
+[ext_resource type="Script" path="res://Scripts/level.gd" id="1_5m6xm"]
+[ext_resource type="PackedScene" uid="uid://dyoafl3nm0m88" path="res://Scenes/gate.tscn" id="3_bfpc4"]
+[ext_resource type="PackedScene" uid="uid://b61sflb01o3sw" path="res://Scenes/player.tscn" id="4_h81a2"]
+
+[node name="Level" type="Node2D"]
+script = ExtResource("1_5m6xm")
+
+[node name="player" parent="." instance=ExtResource("4_h81a2")]
+position = Vector2(583, 365)
+
+[node name="Camera2D" type="Camera2D" parent="player"]
+position_smoothing_enabled = true
+
+[node name="gate" parent="." instance=ExtResource("3_bfpc4")]
+position = Vector2(14, -171)
+
+[node name="ProjectTiles" type="Node2D" parent="."]
+
+[connection signal="grenade" from="player" to="." method="_on_player_grenade"]
+[connection signal="laser" from="player" to="." method="_on_player_laser"]
