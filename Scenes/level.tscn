@@ -80,7 +80,7 @@ position = Vector2(-1376, 4362)
 texture = ExtResource("10_f5rbo")
 
 [node name="house" parent="Ground" instance=ExtResource("7_ti41m")]
-position = Vector2(-1436, 4480)
+position = Vector2(-993, 4420)
 rotation = 3.50113
 
 [node name="Moss5" type="Sprite2D" parent="."]

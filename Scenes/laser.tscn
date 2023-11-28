@@ -8,6 +8,8 @@ radius = 7.0
 height = 86.0
 
 [node name="Laser" type="Area2D"]
+collision_layer = 8
+collision_mask = 7
 script = ExtResource("1_qvrq7")
 
 [node name="Blue" type="Sprite2D" parent="."]

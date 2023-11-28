@@ -9,6 +9,8 @@
 radius = 78.5875
 
 [node name="grenade" type="RigidBody2D"]
+collision_layer = 8
+collision_mask = 15
 physics_material_override = SubResource("PhysicsMaterial_uo45p")
 gravity_scale = 0.0
 script = ExtResource("1_4bbas")
