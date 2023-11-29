@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://b61sflb01o3sw"]
+[gd_scene load_steps=7 format=3 uid="uid://b61sflb01o3sw"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_gdhv3"]
 [ext_resource type="Texture2D" uid="uid://daa0h1fofa7wy" path="res://graphics/player/player.png" id="1_ogo8s"]
@@ -16,6 +16,10 @@ initial_velocity_max = 1000.0
 orbit_velocity_min = 0.0
 orbit_velocity_max = 0.0
 scale_min = 0.5
+color = Color(0, 0.996078, 0.996078, 0.482353)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_dff3h"]
+polygon = PackedVector2Array(7, -16, 19, -8, 29, -2, 38, 5, 52, 6, 69, 15, 79, 11, 89, 13, 101, 11, 106, 14, 117, 10, 119, 16, 126, 13, 132, 17, 137, 29, 130, 37, 126, 38, 124, 46, 114, 44, 108, 59, 108, 68, 80, 78, 73, 69, 58, 74, 50, 70, 54, 75, 41, 87, 23, 105, 6, 112, -4, 114, -17, 107, -27, 95, -38, 92, -40, 85, -47, 79, -55, 69, -61, 53, -60, 40, -58, 27, -49, 20, -41, 18, -41, 14, -37, 7, -31, 2, -27, 3, -17, -6, -10, -7)
 
 [node name="player" type="CharacterBody2D"]
 collision_mask = 31
@@ -23,11 +27,11 @@ script = ExtResource("1_gdhv3")
 
 [node name="playerImage" type="Sprite2D" parent="."]
 position = Vector2(37, 38)
-rotation = 1.5708
+rotation = 1.22173
 texture = ExtResource("1_ogo8s")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 35)
+position = Vector2(3, 50)
 shape = SubResource("CircleShape2D_s3mnu")
 
 [node name="laserTimer" type="Timer" parent="."]
@@ -39,21 +43,24 @@ wait_time = 2.0
 [node name="LaserStartPositions" type="Node2D" parent="."]
 
 [node name="Marker2D" type="Marker2D" parent="LaserStartPositions"]
-position = Vector2(126, 49)
+position = Vector2(126, 14)
 
 [node name="Marker2D3" type="Marker2D" parent="LaserStartPositions"]
-position = Vector2(126, 73)
+position = Vector2(124, 29)
 
 [node name="Marker2D2" type="Marker2D" parent="LaserStartPositions"]
-position = Vector2(134, 59)
+position = Vector2(134, 33)
 
 [node name="GPUParticles2D" type="GPUParticles2D" parent="."]
-position = Vector2(132, 57)
+position = Vector2(130, 25)
 emitting = false
 process_material = SubResource("ParticleProcessMaterial_wbinu")
 texture = ExtResource("3_lrj2p")
 lifetime = 0.2
 one_shot = true
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+occluder = SubResource("OccluderPolygon2D_dff3h")
 
 [connection signal="timeout" from="laserTimer" to="." method="_on_laserTimer_timeout"]
 [connection signal="timeout" from="grenadeTimer" to="." method="_on_grenade_timer_timeout"]

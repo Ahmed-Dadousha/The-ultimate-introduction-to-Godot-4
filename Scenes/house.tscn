@@ -1,6 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://dj1ennvlrhq70"]
+[gd_scene load_steps=7 format=3 uid="uid://dj1ennvlrhq70"]
 
 [ext_resource type="Texture2D" uid="uid://d2xhvhqgx68jx" path="res://graphics/tilesets/interior.png" id="1_avuv3"]
+[ext_resource type="PackedScene" uid="uid://cl5o5ps802pog" path="res://Scenes/simple_lite.tscn" id="2_u3tk6"]
+[ext_resource type="PackedScene" uid="uid://cms70n3pdr4s3" path="res://Scenes/wall_light.tscn" id="3_3k3to"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2ims8"]
 size = Vector2(2478, 2460)
@@ -178,6 +180,7 @@ texture_region_size = Vector2i(390, 390)
 
 [sub_resource type="TileSet" id="TileSet_ob3hf"]
 tile_size = Vector2i(390, 390)
+occlusion_layer_0/light_mask = 1
 physics_layer_0/collision_layer = 4
 physics_layer_0/collision_mask = 11
 sources/0 = SubResource("TileSetAtlasSource_j1vql")
@@ -208,3 +211,29 @@ layer_2/y_sort_enabled = false
 layer_2/y_sort_origin = 0
 layer_2/z_index = 0
 layer_2/tile_data = PackedInt32Array(262146, 327680, 8, 196610, 65536, 6, 131074, 65536, 6, 65538, 65536, 6, 2, 65536, 7, 65535, 262144, 7, 0, 393216, 7, 1, 262144, 7, -1, 262144, 7, -65531, 393216, 7, -65536, 0, 6, -65535, 0, 6, -65534, 196608, 8, -65533, 0, 6, -65532, 0, 6, -131070, 327680, 6)
+
+[node name="SimpleLite" parent="." instance=ExtResource("2_u3tk6")]
+position = Vector2(2055, -26)
+rotation = 1.5708
+
+[node name="SimpleLite3" parent="." instance=ExtResource("2_u3tk6")]
+position = Vector2(2064, 1459)
+rotation = 1.5708
+
+[node name="SimpleLite2" parent="." instance=ExtResource("2_u3tk6")]
+position = Vector2(1478, -518)
+
+[node name="SimpleLite4" parent="." instance=ExtResource("2_u3tk6")]
+position = Vector2(383, -505)
+
+[node name="WallLight" parent="." instance=ExtResource("3_3k3to")]
+position = Vector2(-53, 85)
+rotation = -1.5708
+
+[node name="WallLight2" parent="." instance=ExtResource("3_3k3to")]
+position = Vector2(-65, 1205)
+rotation = -1.5708
+
+[node name="WallLight3" parent="." instance=ExtResource("3_3k3to")]
+position = Vector2(2017, 734)
+rotation = 1.5708
