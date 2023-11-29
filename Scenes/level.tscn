@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://dqa62rm1skwfr"]
+[gd_scene load_steps=18 format=3 uid="uid://dqa62rm1skwfr"]
 
 [ext_resource type="Script" path="res://Scripts/level.gd" id="1_5m6xm"]
 [ext_resource type="Texture2D" uid="uid://cu2jvwgqcqi3m" path="res://graphics/tilesets/outside_walls.png" id="2_n5u63"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://cr3gcsoak34lx" path="res://graphics/decals/moss/moss_1.png" id="7_nd74q"]
 [ext_resource type="PackedScene" uid="uid://dj1ennvlrhq70" path="res://Scenes/house.tscn" id="7_ti41m"]
 [ext_resource type="Texture2D" uid="uid://cm656cae1wjur" path="res://graphics/decals/moss/moss_2.png" id="8_bvi0s"]
+[ext_resource type="PackedScene" uid="uid://b3bso6bhlc6h0" path="res://Scenes/steam.tscn" id="8_dr2gf"]
 [ext_resource type="Texture2D" uid="uid://c1nyxmwq35xva" path="res://graphics/decals/moss/moss_3.png" id="9_vrnbi"]
 [ext_resource type="Texture2D" uid="uid://cfxk0yr1lm2hn" path="res://graphics/tilesets/soil.png" id="10_02ocb"]
 [ext_resource type="Texture2D" uid="uid://c1ehgw1oudfe5" path="res://graphics/decals/moss/moss_4.png" id="10_f5rbo"]
@@ -83,8 +84,11 @@ texture = ExtResource("10_f5rbo")
 position = Vector2(-993, 4420)
 rotation = 3.50113
 
+[node name="SteamVent" parent="Ground" instance=ExtResource("8_dr2gf")]
+position = Vector2(-303, 1800)
+
 [node name="Moss5" type="Sprite2D" parent="."]
-position = Vector2(-1585, 592)
+position = Vector2(-1322, 432)
 texture = ExtResource("11_hofc2")
 
 [node name="TileMap" type="TileMap" parent="."]
