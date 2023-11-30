@@ -12,7 +12,7 @@ config_version=5
 
 config/name="Godot4Introduction"
 run/main_scene="res://Scenes/level.tscn"
-config/features=PackedStringArray("4.1", "Mobile")
+config/features=PackedStringArray("4.2", "Mobile")
 config/icon="res://icon.svg"
 
 [display]
@@ -20,6 +20,14 @@ config/icon="res://icon.svg"
 window/size/viewport_width=1280
 window/size/viewport_height=720
 window/stretch/mode="canvas_items"
+
+[file_customization]
+
+folder_colors={
+"res://Scenes/": "green",
+"res://Scripts/": "red",
+"res://graphics/": "purple"
+}
 
 [filesystem]
 

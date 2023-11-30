@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://dqa62rm1skwfr"]
+[gd_scene load_steps=19 format=3 uid="uid://dqa62rm1skwfr"]
 
 [ext_resource type="Script" path="res://Scripts/level.gd" id="1_5m6xm"]
 [ext_resource type="Texture2D" uid="uid://cu2jvwgqcqi3m" path="res://graphics/tilesets/outside_walls.png" id="2_n5u63"]
@@ -14,6 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://cfxk0yr1lm2hn" path="res://graphics/tilesets/soil.png" id="10_02ocb"]
 [ext_resource type="Texture2D" uid="uid://c1ehgw1oudfe5" path="res://graphics/decals/moss/moss_4.png" id="10_f5rbo"]
 [ext_resource type="Texture2D" uid="uid://cdw3lc75qcc7i" path="res://graphics/decals/moss/moss_5.png" id="11_hofc2"]
+[ext_resource type="PackedScene" uid="uid://3vb7o4bcm0kn" path="res://Scenes/light_fan_animation.tscn" id="15_itbsd"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_o4n4v"]
 resource_name = "Walls"
@@ -87,6 +88,9 @@ rotation = 3.50113
 [node name="SteamVent" parent="Ground" instance=ExtResource("8_dr2gf")]
 position = Vector2(-303, 1800)
 
+[node name="LightFanAnimation" parent="Ground" instance=ExtResource("15_itbsd")]
+position = Vector2(-1839, 2535)
+
 [node name="Moss5" type="Sprite2D" parent="."]
 position = Vector2(-1322, 432)
 texture = ExtResource("11_hofc2")
@@ -98,11 +102,6 @@ format = 2
 layer_0/name = "Soil"
 layer_0/tile_data = PackedInt32Array(65534, 131073, 1, 131070, 131073, 1, 196606, 131073, 1, 262142, 131073, 2, -7, 65537, 0, -6, 65537, 0, -5, 65537, 0, -4, 65537, 0, -3, 65537, 0, 65528, 1, 1, 131064, 1, 1, 196600, 1, 1, 262137, 65537, 2, 262138, 65537, 2, 262139, 65537, 2, 262140, 65537, 2, 262141, 65537, 2, -2, 131073, 0, -8, 1, 0, 262136, 1, 2, 65529, 65537, 1, 131065, 65537, 1, 196601, 65537, 1, 65530, 65537, 1, 131066, 65537, 1, 196602, 65537, 1, 65531, 65537, 1, 131067, 65537, 1, 196603, 65537, 1, 65532, 65537, 1, 131068, 65537, 1, 196604, 65537, 1, 65533, 65537, 1, 131069, 65537, 1, 196605, 65537, 1, 4, 65537, 0, 65540, 65537, 1, 131076, 65537, 1, 196612, 65537, 2, 5, 65537, 0, 65541, 65537, 1, 131077, 65537, 1, 196613, 65537, 2, 6, 65537, 0, 65542, 65537, 1, 131078, 65537, 1, 196614, 65537, 2, 7, 65537, 0, 65543, 65537, 1, 131079, 65537, 1, 196615, 65537, 2, 8, 65537, 0, 65544, 65537, 1, 131080, 65537, 1, 196616, 65537, 2, 9, 65537, 0, 65545, 65537, 1, 131081, 65537, 1, 196617, 65537, 2, 10, 65537, 0, 65546, 65537, 1, 131082, 65537, 1, 196618, 65537, 2, 11, 65537, 0, 65547, 65537, 1, 131083, 65537, 1, 196619, 65537, 1, 12, 131073, 1, 65548, 131073, 1, 131084, 131073, 1, 196620, 131073, 1, 3, 1, 1, 65539, 1, 1, 131075, 1, 1, 196611, 1, 2, -65532, 65537, 0, -65531, 65537, 0, -65530, 65537, 0, -65529, 65537, 0, -65528, 65537, 0, -65527, 65537, 0, -65526, 65537, 0, -65525, 65537, 0, -65524, 131073, 0, -65533, 1, 0, 262156, 131073, 1, 327692, 131073, 1, 393228, 131073, 2, 262155, 1, 1, 327691, 1, 1, 393227, 1, 2)
 layer_1/name = "Walls"
-layer_1/enabled = true
-layer_1/modulate = Color(1, 1, 1, 1)
-layer_1/y_sort_enabled = false
-layer_1/y_sort_origin = 0
-layer_1/z_index = 0
 layer_1/tile_data = PackedInt32Array(262136, 0, 0, 262137, 65536, 0, 262138, 65536, 0, 262139, 65536, 0, 262140, 65536, 0, 262141, 65536, 0, 262142, 131072, 0, -65533, 0, 1, 3, 0, 2, 65539, 0, 2, 131075, 0, 2, 196611, 65536, 2, 196612, 65536, 0, 196613, 65536, 0, 196614, 65536, 0, 196615, 65536, 0, 196616, 65536, 0, 196617, 65536, 0, 196618, 65536, 0, 196619, 65536, 0, 196620, 131072, 1, 262156, 0, 2, 327692, 0, 2, 393228, 0, 2)
 
 [node name="Moss3" type="Sprite2D" parent="."]
@@ -120,9 +119,6 @@ position_smoothing_enabled = true
 position = Vector2(14, -171)
 
 [node name="ProjectTiles" type="Node2D" parent="."]
-
-[node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
-shadow_enabled = true
 
 [connection signal="grenade" from="player" to="." method="_on_player_grenade"]
 [connection signal="laser" from="player" to="." method="_on_player_laser"]
