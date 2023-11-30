@@ -1,6 +1,6 @@
 extends RigidBody2D
-const speed: int = 750
+const speed: int = 400
 
 func explode():
-	#$AnimationPlayer.play("explosion")
-	pass
+	$AnimationPlayer.play("explosion")
+
