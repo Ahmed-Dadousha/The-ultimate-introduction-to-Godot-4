@@ -47,6 +47,7 @@ texture_region_size = Vector2i(390, 390)
 
 [sub_resource type="TileSet" id="TileSet_jfwt1"]
 tile_size = Vector2i(390, 390)
+occlusion_layer_0/light_mask = 1
 sources/0 = SubResource("TileSetAtlasSource_o4n4v")
 sources/1 = SubResource("TileSetAtlasSource_b6iv1")
 
@@ -82,7 +83,7 @@ position = Vector2(-1376, 4362)
 texture = ExtResource("6_r880h")
 
 [node name="house" parent="Ground" index="5" instance=ExtResource("7_kdxwv")]
-position = Vector2(-993, 4420)
+position = Vector2(-969, 4437)
 rotation = 3.50113
 
 [node name="SteamVent" parent="Ground" index="6" instance=ExtResource("8_4c07p")]
@@ -109,10 +110,10 @@ position = Vector2(1342, 851)
 [node name="Toilet" parent="." index="4" instance=ExtResource("15_owqa5")]
 position = Vector2(578, 866)
 
-[node name="player" parent="." index="5"]
-position = Vector2(583, 364)
-
-[node name="ProjectTiles" parent="." index="6"]
+[node name="ProjectTiles" parent="." index="5"]
 position = Vector2(0, -1)
+
+[node name="player" parent="." index="6"]
+position = Vector2(583, 364)
 
 [connection signal="player_entered_gate" from="gate" to="." method="_on_gate_player_entered_gate"]

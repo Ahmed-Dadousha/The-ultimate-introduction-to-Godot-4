@@ -9,6 +9,8 @@ script = ExtResource("1_5m6xm")
 [node name="Ground" type="Node2D" parent="."]
 position = Vector2(161, -1314)
 
+[node name="ProjectTiles" type="Node2D" parent="."]
+
 [node name="player" parent="." instance=ExtResource("4_h81a2")]
 position = Vector2(583, 365)
 
@@ -16,7 +18,7 @@ position = Vector2(583, 365)
 zoom = Vector2(0.5, 0.5)
 position_smoothing_enabled = true
 
-[node name="ProjectTiles" type="Node2D" parent="."]
+[node name="Lights" type="Node2D" parent="."]
 
 [connection signal="grenade" from="player" to="." method="_on_player_grenade"]
 [connection signal="laser" from="player" to="." method="_on_player_laser"]
