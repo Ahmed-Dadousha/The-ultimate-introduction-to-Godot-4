@@ -1,12 +1,14 @@
-[gd_scene load_steps=6 format=3 uid="uid://deo0uqwu8fm3e"]
+[gd_scene load_steps=7 format=3 uid="uid://deo0uqwu8fm3e"]
 
 [ext_resource type="Texture2D" uid="uid://ditfy56txcjn1" path="res://graphics/ui/bullet.png" id="1_1iw8u"]
 [ext_resource type="Theme" uid="uid://gj7s0vgdnjha" path="res://Scenes/UIFont.tres" id="1_mcjbq"]
+[ext_resource type="Script" path="res://Scripts/UI.gd" id="1_s055o"]
 [ext_resource type="Texture2D" uid="uid://bygb3dp76oeuo" path="res://graphics/ui/grenade.png" id="2_58sye"]
 [ext_resource type="Texture2D" uid="uid://bg04ruoohco1v" path="res://graphics/ui/progress_bar/bg.png" id="4_nc7y4"]
 [ext_resource type="Texture2D" uid="uid://dt1aja38kh8ri" path="res://graphics/ui/progress_bar/progress.png" id="5_mnrph"]
 
 [node name="UI" type="CanvasLayer"]
+script = ExtResource("1_s055o")
 
 [node name="LaserCounter" type="Control" parent="."]
 layout_mode = 3
@@ -16,20 +18,20 @@ anchor_bottom = 1.0
 offset_top = -715.0
 offset_right = 1281.0
 grow_vertical = 0
+size_flags_horizontal = 6
 
 [node name="VBoxContainer" type="VBoxContainer" parent="LaserCounter"]
 layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
-offset_top = -40.0
-offset_right = 40.0
+offset_top = -87.0
+offset_right = 60.0
 grow_vertical = 0
 
 [node name="Label" type="Label" parent="LaserCounter/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("1_mcjbq")
-text = "20"
 horizontal_alignment = 1
 
 [node name="ColorRect" type="TextureRect" parent="LaserCounter/VBoxContainer"]
@@ -51,22 +53,19 @@ grow_vertical = 0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="GrenadeCounter"]
 layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.5
-anchor_top = 0.266
-anchor_right = 0.5
-anchor_bottom = 0.59
-offset_left = -20.0
-offset_top = -33.5
-offset_right = 20.0
-offset_bottom = 33.5
-grow_horizontal = 2
-grow_vertical = 2
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -59.16
+offset_top = -87.0
+grow_horizontal = 0
+grow_vertical = 0
 
 [node name="Label" type="Label" parent="GrenadeCounter/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("1_mcjbq")
-text = "5"
 horizontal_alignment = 1
 
 [node name="TextureRect" type="TextureRect" parent="GrenadeCounter/VBoxContainer"]
