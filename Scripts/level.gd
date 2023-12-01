@@ -7,6 +7,7 @@ var grenade_scene: PackedScene = preload("res://Scenes/grenade.tscn")
 func _on_player_laser(pos, direction):
 	# Update Laser Amount
 	Global.laser_amount -= 1
+	$UI.update_laser_text()
 	# Create a new instance from laser scene
 	var laser_instance = laser_scene.instantiate() as Area2D
 	# Set its position randomly to one of the markers
@@ -22,6 +23,7 @@ func _on_player_laser(pos, direction):
 func _on_player_grenade(pos, direction):
 	# Update Grenade Amount
 	Global.grenade_amount -= 1
+	$UI.update_grenade_text()
 	# Create a new instance from grenade scene
 	var grenade_instance = grenade_scene.instantiate() as RigidBody2D
 	# Set its position to one marker index 0

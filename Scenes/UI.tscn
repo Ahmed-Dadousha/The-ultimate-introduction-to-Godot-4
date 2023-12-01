@@ -34,7 +34,7 @@ layout_mode = 2
 theme = ExtResource("1_mcjbq")
 horizontal_alignment = 1
 
-[node name="ColorRect" type="TextureRect" parent="LaserCounter/VBoxContainer"]
+[node name="TextureRect" type="TextureRect" parent="LaserCounter/VBoxContainer"]
 layout_mode = 2
 texture = ExtResource("1_1iw8u")
 expand_mode = 4
