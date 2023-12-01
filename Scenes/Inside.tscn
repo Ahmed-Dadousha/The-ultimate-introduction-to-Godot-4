@@ -10,7 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://cms70n3pdr4s3" path="res://Scenes/wall_light.tscn" id="5_fjf8k"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l6fbw"]
-size = Vector2(155, 729)
+size = Vector2(155, 681)
 
 [node name="Level" instance=ExtResource("1_w3gux")]
 script = ExtResource("2_c0u5e")
@@ -128,7 +128,7 @@ blend_mode = 1
 [node name="ExitGameArea" type="Area2D" parent="." index="5"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ExitGameArea" index="0"]
-position = Vector2(5416.5, 253)
+position = Vector2(5416.5, 246.5)
 shape = SubResource("RectangleShape2D_l6fbw")
 
 [connection signal="body_entered" from="ExitGameArea" to="." method="_on_exit_game_area_body_entered"]
