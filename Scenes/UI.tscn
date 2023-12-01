@@ -1,12 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://deo0uqwu8fm3e"]
+[gd_scene load_steps=6 format=3 uid="uid://deo0uqwu8fm3e"]
 
 [ext_resource type="Texture2D" uid="uid://ditfy56txcjn1" path="res://graphics/ui/bullet.png" id="1_1iw8u"]
-[ext_resource type="FontFile" uid="uid://bfvmdw7r6ptpu" path="res://graphics/ui/subatomic.tsoonami.ttf" id="1_43wjt"]
+[ext_resource type="Theme" uid="uid://gj7s0vgdnjha" path="res://Scenes/UIFont.tres" id="1_mcjbq"]
 [ext_resource type="Texture2D" uid="uid://bygb3dp76oeuo" path="res://graphics/ui/grenade.png" id="2_58sye"]
-
-[sub_resource type="Theme" id="Theme_utna6"]
-default_font = ExtResource("1_43wjt")
-default_font_size = 25
+[ext_resource type="Texture2D" uid="uid://bg04ruoohco1v" path="res://graphics/ui/progress_bar/bg.png" id="4_nc7y4"]
+[ext_resource type="Texture2D" uid="uid://dt1aja38kh8ri" path="res://graphics/ui/progress_bar/progress.png" id="5_mnrph"]
 
 [node name="UI" type="CanvasLayer"]
 
@@ -30,9 +28,9 @@ grow_vertical = 0
 
 [node name="Label" type="Label" parent="LaserCounter/VBoxContainer"]
 layout_mode = 2
-size_flags_horizontal = 4
-theme = SubResource("Theme_utna6")
+theme = ExtResource("1_mcjbq")
 text = "20"
+horizontal_alignment = 1
 
 [node name="ColorRect" type="TextureRect" parent="LaserCounter/VBoxContainer"]
 layout_mode = 2
@@ -67,11 +65,30 @@ grow_vertical = 2
 
 [node name="Label" type="Label" parent="GrenadeCounter/VBoxContainer"]
 layout_mode = 2
-size_flags_horizontal = 4
-theme = SubResource("Theme_utna6")
+theme = ExtResource("1_mcjbq")
 text = "5"
+horizontal_alignment = 1
 
 [node name="TextureRect" type="TextureRect" parent="GrenadeCounter/VBoxContainer"]
 layout_mode = 2
 texture = ExtResource("2_58sye")
 expand_mode = 4
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -150.0
+offset_top = -50.0
+offset_right = 150.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/margin_bottom = 20
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="MarginContainer"]
+layout_mode = 2
+value = 20.0
+texture_under = ExtResource("4_nc7y4")
+texture_progress = ExtResource("5_mnrph")
