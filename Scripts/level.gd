@@ -1,5 +1,5 @@
 extends Node2D
-
+class_name LevelParnet
 # Preload laser and grenade scenes
 var laser_scene: PackedScene = preload("res://Scenes/laser.tscn")
 var grenade_scene: PackedScene = preload("res://Scenes/grenade.tscn")
@@ -37,6 +37,3 @@ func _on_house_player_exit():
 	var tween = get_tree().create_tween()
 	tween.tween_property($player/Camera2D,"zoom",Vector2(.5,.5),1)
 
-func _on_gate_player_entered_gate():
-	var tween = create_tween()
-	tween.tween_property($player,"speed",0,.5)

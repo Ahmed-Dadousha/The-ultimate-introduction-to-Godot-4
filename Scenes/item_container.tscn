@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://ibyggl746ivy"]
+
+[ext_resource type="Script" path="res://Scripts/item_container.gd" id="1_tyfda"]
+
+[node name="ItemContainer" type="StaticBody2D"]
+script = ExtResource("1_tyfda")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]

@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	var direction = Vector2.RIGHT
 	
 	velocity = direction * 100
