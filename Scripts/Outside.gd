@@ -7,4 +7,4 @@ func _on_gate_player_entered_gate():
 	call_deferred("teleport")
 	
 func teleport():
-	get_tree().change_scene_to_file("res://Scenes/Inside.tscn")
+	TransitionLayer.change_scene("res://Scenes/Inside.tscn")

@@ -7,4 +7,4 @@ func _on_exit_game_area_body_entered(_body):
 	call_deferred("teleport")
 	
 func teleport():	
-	get_tree().change_scene_to_file("res://Scenes/Outside.tscn")
+	TransitionLayer.change_scene("res://Scenes/Outside.tscn")
