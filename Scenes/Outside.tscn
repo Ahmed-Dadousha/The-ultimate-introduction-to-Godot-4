@@ -124,4 +124,3 @@ position = Vector2(583, 364)
 position = Vector2(252, 441)
 
 [connection signal="player_entered_gate" from="gate" to="." method="_on_gate_player_entered_gate"]
-[connection signal="update_state" from="player" to="." method="_on_player_update_state"]

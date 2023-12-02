@@ -88,6 +88,5 @@ theme_override_constants/margin_bottom = 20
 
 [node name="TextureProgressBar" type="TextureProgressBar" parent="MarginContainer"]
 layout_mode = 2
-value = 20.0
 texture_under = ExtResource("4_nc7y4")
 texture_progress = ExtResource("5_mnrph")

@@ -10,10 +10,15 @@ func _ready():
 		$Sprite2D.modulate = Color(0.8,0.2,0.1)
 	else :
 		$Sprite2D.modulate = Color(0.1,0.8,0.2)
+
 func _process(delta):
 	rotation += rotation_speed  * delta
 
-
-func _on_body_entered(body):
-	body.add_item(type)
+func _on_body_entered(_body):
+	if type == 'laser':
+		Global.laser_amount += 5
+	elif type == 'grenade':
+		Global.grenade_amount += 1
+	elif type == "health":
+		Global.health += 20
 	queue_free()
