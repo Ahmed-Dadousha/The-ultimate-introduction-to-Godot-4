@@ -8,3 +8,8 @@ func _on_gate_player_entered_gate():
 	
 func teleport():
 	TransitionLayer.change_scene("res://Scenes/Inside.tscn")
+
+
+func _on_player_update_state():
+	$UI.update_laser_text()
+	$UI.update_grenade_text()

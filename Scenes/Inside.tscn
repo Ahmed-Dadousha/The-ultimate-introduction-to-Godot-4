@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://cnuy6sx10lwqv"]
+[gd_scene load_steps=12 format=3 uid="uid://cnuy6sx10lwqv"]
 
 [ext_resource type="PackedScene" uid="uid://dqa62rm1skwfr" path="res://Scenes/level.tscn" id="1_w3gux"]
 [ext_resource type="TileSet" uid="uid://b0p1y86v03o26" path="res://Scenes/house.tres" id="2_5bwcv"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://cu38mhrnm6bc0" path="res://graphics/lights/textures/circle.png" id="4_he70t"]
 [ext_resource type="PackedScene" uid="uid://cms70n3pdr4s3" path="res://Scenes/wall_light.tscn" id="5_fjf8k"]
 [ext_resource type="PackedScene" uid="uid://deo0uqwu8fm3e" path="res://Scenes/UI.tscn" id="9_haihi"]
+[ext_resource type="PackedScene" uid="uid://d6y3nhfu2ix6" path="res://Scenes/item.tscn" id="10_x71h5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l6fbw"]
 size = Vector2(155, 681)
@@ -133,5 +134,8 @@ position = Vector2(5416.5, 246.5)
 shape = SubResource("RectangleShape2D_l6fbw")
 
 [node name="UI" parent="." index="6" instance=ExtResource("9_haihi")]
+
+[node name="Item" parent="." index="7" instance=ExtResource("10_x71h5")]
+position = Vector2(3480, 412)
 
 [connection signal="body_entered" from="ExitGameArea" to="." method="_on_exit_game_area_body_entered"]

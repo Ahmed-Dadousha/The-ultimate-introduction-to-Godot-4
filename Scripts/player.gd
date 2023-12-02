@@ -9,7 +9,7 @@ var speed: int = max_speed
 # Custem Signals
 signal laser(pos, direction)
 signal grenade(pos, direction)
-
+signal update_state
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
 	var direction = Input.get_vector("left","right","up","down")
@@ -48,3 +48,10 @@ func _on_grenade_timer_timeout():
 
 func _on_laserTimer_timeout():
 	can_laser = true
+
+func add_item(type: String) -> void:
+	if type == 'laser':
+		Global.laser_amount += 5
+	elif type == 'grenade':
+		Global.grenade_amount += 1
+	update_state.emit()
