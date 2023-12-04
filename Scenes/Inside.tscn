@@ -108,13 +108,6 @@ position = Vector2(1416, 1082)
 [node name="SteamVent5" parent="Ground" index="20" instance=ExtResource("8_vs3ml")]
 position = Vector2(-622, 2635)
 
-[node name="player" parent="." index="3"]
-position = Vector2(4990, 163)
-
-[node name="PointLight2D" type="PointLight2D" parent="player" index="8"]
-texture = ExtResource("4_he70t")
-texture_scale = 3.0
-
 [node name="DirectionalLight2D" type="DirectionalLight2D" parent="." index="4"]
 visible = false
 color = Color(0.345098, 0.407843, 0.415686, 1)
@@ -128,7 +121,14 @@ shape = SubResource("RectangleShape2D_l6fbw")
 
 [node name="UI" parent="." index="6" instance=ExtResource("9_haihi")]
 
-[node name="Lights" parent="." index="7"]
+[node name="player" parent="." index="7"]
+position = Vector2(4990, 163)
+
+[node name="PointLight2D" type="PointLight2D" parent="player" index="8"]
+texture = ExtResource("4_he70t")
+texture_scale = 3.0
+
+[node name="Lights" parent="." index="8"]
 metadata/_edit_lock_ = true
 
 [node name="LightFanAnimation" parent="Lights" index="0" instance=ExtResource("4_ea6a7")]

@@ -21,6 +21,8 @@ func _process(_delta):
 	var player_direction = (get_global_mouse_position() - position).normalized()	
 	
 	if Input.is_action_pressed("primary action") && can_laser && Global.laser_amount > 0:
+		# Update Laser Amount
+		Global.laser_amount -= 1
 		# Emit laser particales
 		$GPUParticles2D.emitting = true
 		# Choose a random position for the laser
@@ -48,3 +50,5 @@ func _on_grenade_timer_timeout():
 func _on_laserTimer_timeout():
 	can_laser = true
 
+func hit():
+	print("Player was hit")

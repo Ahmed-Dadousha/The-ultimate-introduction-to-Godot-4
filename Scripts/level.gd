@@ -38,9 +38,6 @@ func _on_scout_laser(pos, direction):
 	create_laser(pos, direction)
 
 func create_laser(pos, direction):
-	# Update Laser Amount
-	Global.laser_amount -= 1
-	$UI.update_laser_text()
 	# Create a new instance from laser scene
 	var laser_instance = laser_scene.instantiate() as Area2D
 	# Set its position randomly to one of the markers

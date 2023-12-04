@@ -19,13 +19,12 @@ func _process(_delta):
 			
 func _on_attack_area_body_entered(_body):
 	player_nearby = true
-	print("Inside")
-
 
 func _on_attack_area_body_exited(_body):
 	player_nearby = false
-	print("Out")
-
 
 func _on_laser_cool_down_timeout():
 	can_laser = true
+
+func hit():
+	print("Scout Was Hit")
