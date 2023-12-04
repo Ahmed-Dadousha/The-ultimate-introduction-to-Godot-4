@@ -45,12 +45,3 @@ func _on_player_grenade(pos, direction):
 	# Add it to projectTiles node
 	$ProjectTiles.add_child(grenade_instance)
 
-func _on_house_player_entered():
-	var tween = get_tree().create_tween()
-	tween.set_parallel(true)
-	tween.tween_property($player/Camera2D,"zoom",Vector2(1,1),1).from(1)
-	tween.tween_property($player,"modulate:a",0,2).set_trans(Tween.TRANS_QUAD)
-
-func _on_house_player_exit():
-	var tween = get_tree().create_tween()
-	tween.tween_property($player/Camera2D,"zoom",Vector2(.5,.5),1)

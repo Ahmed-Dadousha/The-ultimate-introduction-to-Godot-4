@@ -19,11 +19,12 @@ func _ready():
 	tween.set_parallel(true)
 	tween.tween_property(self, "position", target_pos,.5)
 	tween.tween_property(self,"scale", Vector2(1,1),.3).from(Vector2.ZERO)
+
 func _process(delta):
 	rotation += rotation_speed  * delta
 
 func _on_body_entered(body):
-	if body.is_in_group("player"):
+	if body.is_in_group("Player"):
 		if type == 'laser':
 			Global.laser_amount += 5
 		elif type == 'grenade':
