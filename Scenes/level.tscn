@@ -9,6 +9,8 @@ script = ExtResource("1_5m6xm")
 [node name="Ground" type="Node2D" parent="."]
 position = Vector2(161, -1314)
 
+[node name="Items" type="Node2D" parent="."]
+
 [node name="ProjectTiles" type="Node2D" parent="."]
 
 [node name="player" parent="." instance=ExtResource("4_h81a2")]

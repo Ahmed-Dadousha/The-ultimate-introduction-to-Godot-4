@@ -26,7 +26,6 @@ func update_grenade_text():
 	update_color(Global.grenade_amount, grenade_Counter, grenade_icon)
 
 func update_health_text():
-	print(Global.health)
 	health_bar.value = Global.health
 
 func update_color(amount: int, label: Label, icon: TextureRect) -> void:

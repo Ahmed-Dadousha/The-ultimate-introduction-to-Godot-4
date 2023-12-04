@@ -3,7 +3,19 @@ class_name LevelParnet
 # Preload laser and grenade scenes
 var laser_scene: PackedScene = preload("res://Scenes/laser.tscn")
 var grenade_scene: PackedScene = preload("res://Scenes/grenade.tscn")
+var item_scene: PackedScene = preload("res://Scenes/item.tscn")
 
+
+func _ready():
+	for container in get_tree().get_nodes_in_group("Container"):
+		container.connect("open", _on_container_opened)
+	
+func _on_container_opened(pos, direction):
+	var item = item_scene.instantiate()
+	item.position = pos
+	item.direction = direction
+	call_deferred("add_child", item)
+	
 func _on_player_laser(pos, direction):
 	# Update Laser Amount
 	Global.laser_amount -= 1
