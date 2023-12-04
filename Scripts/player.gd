@@ -5,6 +5,7 @@ var can_laser : bool = true
 var can_grenade : bool = true
 @export var max_speed: int = 500
 var speed: int = max_speed
+
 # Custem Signals
 signal laser(pos, direction)
 signal grenade(pos, direction)
