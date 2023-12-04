@@ -14,7 +14,7 @@ func _process(_delta):
 	var direction = Input.get_vector("left","right","up","down")
 #	position += direction * 500 * delta
 	velocity = direction * speed
-	
+	Global.player_pos = global_position
 	# Rotate the player to mouse direction
 	look_at(get_global_mouse_position())
 	# Getting Player Direction

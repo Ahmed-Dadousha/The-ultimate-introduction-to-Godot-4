@@ -1,0 +1,31 @@
+extends CharacterBody2D
+
+var player_nearby: bool = false
+var can_laser: bool = true
+var gun: bool = true
+signal laser(pos, direction)
+ 
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(_delta):
+	if player_nearby:
+		look_at(Global.player_pos)
+		if can_laser:
+			var pos: Vector2 = $LaserSpawnPositions.get_child(gun).global_position
+			gun = not gun
+			var direction: Vector2 = (Global.player_pos - position).normalized()
+			laser.emit(pos, direction)
+			can_laser = false
+			$LaserCoolDown.start()
+			
+func _on_attack_area_body_entered(_body):
+	player_nearby = true
+	print("Inside")
+
+
+func _on_attack_area_body_exited(_body):
+	player_nearby = false
+	print("Out")
+
+
+func _on_laser_cool_down_timeout():
+	can_laser = true
