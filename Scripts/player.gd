@@ -5,7 +5,6 @@ var can_laser : bool = true
 var can_grenade : bool = true
 @export var max_speed: int = 500
 var speed: int = max_speed
- 
 # Custem Signals
 signal laser(pos, direction)
 signal grenade(pos, direction)
@@ -30,7 +29,7 @@ func _process(_delta):
 		var selected_laser = laser_markers[randi() % laser_markers.size()]
 	
 		can_laser = false
-		$laserTimer.start()		
+		$Timers/laserTimer.start()		
 		laser.emit(selected_laser.global_position, player_direction)
 		
 	if Input.is_action_pressed("secondary action") && can_grenade && Global.grenade_amount > 0:
@@ -38,7 +37,7 @@ func _process(_delta):
 		var marker_pos = $LaserStartPositions.get_children()[0]
 		
 		can_grenade = false
-		$grenadeTimer.start()
+		$Timers/grenadeTimer.start()
 
 		grenade.emit(marker_pos.global_position, player_direction)
 		
@@ -51,4 +50,5 @@ func _on_laserTimer_timeout():
 	can_laser = true
 
 func hit():
-	print("Player was hit")
+	Global.health -= 10
+

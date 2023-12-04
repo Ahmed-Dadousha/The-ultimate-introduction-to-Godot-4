@@ -7,9 +7,9 @@
 radius = 52.8867
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_j1gqw"]
-radius = 607.161
+radius = 314.735
 
-[node name="Scout" type="CharacterBody2D" groups=["Scouts"]]
+[node name="Scout" type="CharacterBody2D" groups=["Entity", "Scouts"]]
 script = ExtResource("1_23cox")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -20,7 +20,7 @@ texture = ExtResource("1_selu8")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_40h72")
 
-[node name="AttackArea" type="Area2D" parent="." groups=["Entity"]]
+[node name="AttackArea" type="Area2D" parent="."]
 collision_layer = 16
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AttackArea"]
@@ -34,8 +34,10 @@ position = Vector2(107, -27)
 [node name="Marker2D2" type="Marker2D" parent="LaserSpawnPositions"]
 position = Vector2(115, 15)
 
-[node name="LaserCoolDown" type="Timer" parent="."]
+[node name="Timers" type="Node" parent="."]
+
+[node name="LaserCoolDown" type="Timer" parent="Timers"]
 
 [connection signal="body_entered" from="AttackArea" to="." method="_on_attack_area_body_entered"]
 [connection signal="body_exited" from="AttackArea" to="." method="_on_attack_area_body_exited"]
-[connection signal="timeout" from="LaserCoolDown" to="." method="_on_laser_cool_down_timeout"]
+[connection signal="timeout" from="Timers/LaserCoolDown" to="." method="_on_laser_cool_down_timeout"]

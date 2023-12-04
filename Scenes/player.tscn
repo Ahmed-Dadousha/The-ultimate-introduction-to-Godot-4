@@ -32,10 +32,12 @@ texture = ExtResource("1_ogo8s")
 position = Vector2(3, 50)
 shape = SubResource("CircleShape2D_s3mnu")
 
-[node name="laserTimer" type="Timer" parent="."]
+[node name="Timers" type="Node" parent="."]
+
+[node name="laserTimer" type="Timer" parent="Timers"]
 wait_time = 0.5
 
-[node name="grenadeTimer" type="Timer" parent="."]
+[node name="grenadeTimer" type="Timer" parent="Timers"]
 wait_time = 2.0
 
 [node name="LaserStartPositions" type="Node2D" parent="."]
@@ -60,5 +62,5 @@ one_shot = true
 [node name="LightOccluder2D" type="LightOccluder2D" parent="."]
 occluder = SubResource("OccluderPolygon2D_dff3h")
 
-[connection signal="timeout" from="laserTimer" to="." method="_on_laserTimer_timeout"]
-[connection signal="timeout" from="grenadeTimer" to="." method="_on_grenade_timer_timeout"]
+[connection signal="timeout" from="Timers/laserTimer" to="." method="_on_laserTimer_timeout"]
+[connection signal="timeout" from="Timers/grenadeTimer" to="." method="_on_grenade_timer_timeout"]
