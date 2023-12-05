@@ -1,18 +1,25 @@
-[gd_scene load_steps=5 format=3 uid="uid://capaoweo7kq10"]
+[gd_scene load_steps=7 format=3 uid="uid://capaoweo7kq10"]
 
 [ext_resource type="Script" path="res://Scripts/scout.gd" id="1_23cox"]
 [ext_resource type="Texture2D" uid="uid://dwaudpobvohy5" path="res://graphics/enemies/scout.png" id="1_selu8"]
+[ext_resource type="Shader" path="res://Scenes/scout.gdshader" id="3_sqpds"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_2ru68"]
+shader = ExtResource("3_sqpds")
+shader_parameter/color = Color(0.835294, 0.921569, 0.980392, 1)
+shader_parameter/progress = 0.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_40h72"]
 radius = 52.8867
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_j1gqw"]
-radius = 314.735
+radius = 371.539
 
 [node name="Scout" type="CharacterBody2D" groups=["Entity", "Scouts"]]
 script = ExtResource("1_23cox")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_2ru68")
 position = Vector2(36, 27)
 rotation = 1.5708
 texture = ExtResource("1_selu8")
