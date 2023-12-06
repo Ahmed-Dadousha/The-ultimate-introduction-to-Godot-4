@@ -1,7 +1,7 @@
 extends RigidBody2D
-const speed: int = 600
+const speed: int = 700
 var explosion_active: bool = false
-var explosion_range: int = 400
+var explosion_range: int = 300
 
 func explode():
 	$AnimationPlayer.play("explosion")
