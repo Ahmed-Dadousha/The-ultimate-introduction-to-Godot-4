@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://dxxj73ydnmbkn"]
+[gd_scene load_steps=24 format=3 uid="uid://dxxj73ydnmbkn"]
 
 [ext_resource type="PackedScene" uid="uid://dqa62rm1skwfr" path="res://Scenes/level.tscn" id="1_hgqfg"]
 [ext_resource type="Script" path="res://Scripts/Outside.gd" id="2_fpcw1"]
@@ -19,6 +19,7 @@
 [ext_resource type="PackedScene" uid="uid://deo0uqwu8fm3e" path="res://Scenes/UI.tscn" id="16_jjr2r"]
 [ext_resource type="PackedScene" uid="uid://xb22ug32yi02" path="res://Scenes/bug.tscn" id="17_2wqpi"]
 [ext_resource type="PackedScene" uid="uid://d6y3nhfu2ix6" path="res://Scenes/item.tscn" id="17_dlc27"]
+[ext_resource type="PackedScene" uid="uid://cypxhvdnjxwc7" path="res://Scenes/drone.tscn" id="18_ub74t"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_o4n4v"]
 resource_name = "Walls"
@@ -128,6 +129,9 @@ collision_mask = 11
 
 [node name="Bug" parent="Enemies" index="1" instance=ExtResource("17_2wqpi")]
 position = Vector2(2672, 440)
+
+[node name="drone" parent="Enemies" index="2" instance=ExtResource("18_ub74t")]
+position = Vector2(1936, 2700)
 
 [node name="UI" parent="." index="8" instance=ExtResource("16_jjr2r")]
 
