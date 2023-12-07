@@ -12,24 +12,28 @@ config_version=5
 
 config/name="Godot4Introduction"
 run/main_scene="res://Scenes/Outside.tscn"
-config/features=PackedStringArray("4.1", "Mobile")
+config/features=PackedStringArray("4.2", "Mobile")
 config/icon="res://icon.svg"
 
 [autoload]
 
 Global="*res://Scripts/global.gd"
 TransitionLayer="*res://Scenes/transition_layer.tscn"
+Music="*res://Scenes/music.tscn"
 
 [display]
 
 window/size/viewport_width=1280
 window/size/viewport_height=720
+mouse_cursor/custom_image="res://graphics/ui/crosshair159.png"
+mouse_cursor/custom_image_hotspot=Vector2(17, 17)
 
 [file_customization]
 
 folder_colors={
 "res://Scenes/": "green",
 "res://Scripts/": "red",
+"res://audio/": "blue",
 "res://graphics/": "purple"
 }
 

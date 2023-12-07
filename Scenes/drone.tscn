@@ -1,9 +1,11 @@
-[gd_scene load_steps=11 format=3 uid="uid://cypxhvdnjxwc7"]
+[gd_scene load_steps=13 format=3 uid="uid://cypxhvdnjxwc7"]
 
 [ext_resource type="Script" path="res://Scripts/drone.gd" id="1_5w4ia"]
 [ext_resource type="Texture2D" uid="uid://wjsqr42ue82y" path="res://graphics/enemies/drone.png" id="1_nfe1g"]
 [ext_resource type="Shader" path="res://Scenes/drone.gdshader" id="2_je202"]
 [ext_resource type="Texture2D" uid="uid://3hyd52rein4b" path="res://graphics/explosions/explosion_3.png" id="3_5tnyo"]
+[ext_resource type="AudioStream" uid="uid://b1b58lapguvi4" path="res://audio/solid_impact.ogg" id="5_8ybda"]
+[ext_resource type="AudioStream" uid="uid://d2r11xcdabhic" path="res://audio/explosion.wav" id="6_as5ou"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_gcbek"]
 shader = ExtResource("2_je202")
@@ -88,6 +90,21 @@ tracks/3/keys = {
 "method": &"queue_free"
 }]
 }
+tracks/4/type = "audio"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Node/ExplosionSound")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("6_as5ou")
+}],
+"times": PackedFloat32Array(0.04)
+}
+tracks/4/use_blend = true
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_u1ui8"]
 _data = {
@@ -101,6 +118,7 @@ collision_mask = 15
 script = ExtResource("1_5w4ia")
 
 [node name="Drone" type="Sprite2D" parent="."]
+visible = false
 material = SubResource("ShaderMaterial_gcbek")
 rotation = 1.5708
 texture = ExtResource("1_nfe1g")
@@ -125,6 +143,13 @@ frame = 23
 libraries = {
 "": SubResource("AnimationLibrary_u1ui8")
 }
+
+[node name="Node" type="Node" parent="."]
+
+[node name="HitSound" type="AudioStreamPlayer2D" parent="Node"]
+stream = ExtResource("5_8ybda")
+
+[node name="ExplosionSound" type="AudioStreamPlayer2D" parent="Node"]
 
 [connection signal="body_entered" from="NoticeArea" to="." method="_on_notice_area_body_entered"]
 [connection signal="body_exited" from="NoticeArea" to="." method="_on_notice_area_body_exited"]

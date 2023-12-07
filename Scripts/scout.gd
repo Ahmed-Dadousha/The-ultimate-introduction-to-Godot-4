@@ -33,6 +33,7 @@ func hit():
 	$Sprite2D.material.set_shader_parameter("progress", 1)
 	await  get_tree().create_timer(.2).timeout
 	$Sprite2D.material.set_shader_parameter("progress", 0)
+	$AudioStreamPlayer2D.play()
 	if health <= 0:
 		queue_free()
 

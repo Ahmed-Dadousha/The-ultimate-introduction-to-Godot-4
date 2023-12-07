@@ -30,6 +30,7 @@ func hit():
 	$Drone.material.set_shader_parameter("progress",1)
 	await get_tree().create_timer(.1).timeout
 	$Drone.material.set_shader_parameter("progress",0)
+	$Node/HitSound.play()
 	if health <= 0:
 		stop_movement()
 		$AnimationPlayer.play("explosion")

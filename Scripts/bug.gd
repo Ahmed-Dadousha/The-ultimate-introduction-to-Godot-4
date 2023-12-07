@@ -6,11 +6,12 @@ var active: bool = false
 var health:int = 20
 
 func hit():
-	health -= 10
+	health -= 10	
 	$AnimatedSprite2D.material.set_shader_parameter("progress", .9)
 	$Particales/HitParticales.emitting = true
-	await get_tree().create_timer(.5).timeout
+	await get_tree().create_timer(.3).timeout
 	$AnimatedSprite2D.material.set_shader_parameter("progress", 0)
+	$AudioStreamPlayer2D.play()
 	if health <= 0:
 		queue_free()
 

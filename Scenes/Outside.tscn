@@ -175,7 +175,7 @@ collision_mask = 11
 position = Vector2(2672, 440)
 
 [node name="drone" parent="Enemies" index="2" instance=ExtResource("18_ub74t")]
-position = Vector2(-3969, -1151)
+position = Vector2(-656, 657)
 
 [node name="Hunter" parent="Enemies" index="3" instance=ExtResource("19_5npb0")]
 position = Vector2(4442, 3759)
@@ -186,7 +186,7 @@ position = Vector2(4442, 3759)
 position = Vector2(252, 441)
 
 [node name="player" parent="." index="13"]
-position = Vector2(1656, 204)
+position = Vector2(692, 1294)
 
 [node name="Camera2D" parent="player" index="6"]
 metadata/_edit_lock_ = true
