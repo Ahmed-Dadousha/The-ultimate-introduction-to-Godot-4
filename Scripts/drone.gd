@@ -7,6 +7,7 @@ var max_speed: int = 600
 var speed_multiplier: int = 1
 var explosion_active: bool = false
 var explosion_range: int = 400
+
 func _ready():
 	$Explosion.hide()
 	$Drone.show()

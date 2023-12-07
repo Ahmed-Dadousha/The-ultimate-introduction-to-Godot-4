@@ -16,6 +16,21 @@ radius = 69.4622
 [sub_resource type="CircleShape2D" id="CircleShape2D_h3go8"]
 radius = 802.636
 
+[sub_resource type="Animation" id="Animation_uvmca"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Explosion:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [23]
+}
+
 [sub_resource type="Animation" id="Animation_m5qop"]
 resource_name = "explosion"
 length = 0.46
@@ -72,21 +87,6 @@ tracks/3/keys = {
 "args": [],
 "method": &"queue_free"
 }]
-}
-
-[sub_resource type="Animation" id="Animation_uvmca"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Explosion:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [23]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_u1ui8"]
