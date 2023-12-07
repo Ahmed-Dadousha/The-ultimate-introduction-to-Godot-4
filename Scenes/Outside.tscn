@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://dxxj73ydnmbkn"]
+[gd_scene load_steps=28 format=3 uid="uid://dxxj73ydnmbkn"]
 
 [ext_resource type="PackedScene" uid="uid://dqa62rm1skwfr" path="res://Scenes/level.tscn" id="1_hgqfg"]
 [ext_resource type="Script" path="res://Scripts/Outside.gd" id="2_fpcw1"]
@@ -20,6 +20,7 @@
 [ext_resource type="PackedScene" uid="uid://xb22ug32yi02" path="res://Scenes/bug.tscn" id="17_2wqpi"]
 [ext_resource type="PackedScene" uid="uid://d6y3nhfu2ix6" path="res://Scenes/item.tscn" id="17_dlc27"]
 [ext_resource type="PackedScene" uid="uid://cypxhvdnjxwc7" path="res://Scenes/drone.tscn" id="18_ub74t"]
+[ext_resource type="PackedScene" uid="uid://hlbrr4qk1qp4" path="res://Scenes/hunter.tscn" id="19_5npb0"]
 [ext_resource type="PackedScene" uid="uid://dwvtsvw4agtpy" path="res://Scenes/car.tscn" id="21_sapxu"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_o4n4v"]
@@ -63,6 +64,12 @@ _data = {
 }
 point_count = 7
 
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_020kh"]
+vertices = PackedVector2Array(4846, 1524, 4897, 2053, 4683, 2061, 4736, 1524, 3888, 577, 1415, 577, 1430, -80, 4900, -76, 4891, 1316, 4768, 1313, 4159, 4359, 4164, 4565, 3902, 4566, 3883, 3293, 3876, 4857, 3872, 4587, 4616, 4587, 4898, 4860, 4895, 2543, 4600, 4363, 4683, 2512, 2557, 3289, 2553, 5644, 817, 5633, 821, 5421, 1531, 3825, 361, 5417, 384, 3840, 1534, 2676, 3896, 2673, 4698, 1422)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(4, 5, 6, 7), PackedInt32Array(4, 7, 8, 9), PackedInt32Array(10, 11, 12, 13), PackedInt32Array(14, 15, 16, 17), PackedInt32Array(18, 17, 16, 19, 20), PackedInt32Array(21, 22, 23, 24, 25), PackedInt32Array(24, 26, 27, 25), PackedInt32Array(21, 25, 28), PackedInt32Array(21, 28, 29, 13), PackedInt32Array(20, 19, 10, 13, 29), PackedInt32Array(20, 29, 4, 2), PackedInt32Array(3, 2, 4, 30), PackedInt32Array(4, 9, 30)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(1421, -91, 4911, -86, 4901, 1327, 4773, 1323, 4709, 1423, 4743, 1514, 4855, 1514, 4909, 2063, 4693, 2071, 4693, 2503, 4905, 2535, 4909, 4871, 3867, 4867, 3862, 4578, 4605, 4577, 4591, 4373, 4169, 4369, 4175, 4575, 3894, 4578, 3873, 3303, 2567, 3299, 2563, 5655, 807, 5643, 811, 5431, 351, 5427, 375, 3831, 1521, 3815, 1525, 2667, 3886, 2663, 3878, 587, 1405, 587)])
+source_geometry_group_name = &"navigation_polygon_source_group"
+
 [node name="Level" instance=ExtResource("1_hgqfg")]
 script = ExtResource("2_fpcw1")
 
@@ -90,18 +97,32 @@ texture = ExtResource("4_4xw0v")
 position = Vector2(2540, 3268)
 texture = ExtResource("5_cihak")
 
-[node name="Moss4" type="Sprite2D" parent="Ground" index="4"]
+[node name="Moss3" type="Sprite2D" parent="Ground" index="4"]
+position = Vector2(1940, 6572)
+texture = ExtResource("5_cihak")
+
+[node name="Moss5" type="Sprite2D" parent="Ground" index="5"]
+position = Vector2(4308, 4892)
+texture = ExtResource("5_cihak")
+
+[node name="Moss4" type="Sprite2D" parent="Ground" index="6"]
 position = Vector2(253, 4387)
 texture = ExtResource("6_r880h")
 
-[node name="house" parent="Ground" index="5" instance=ExtResource("7_kdxwv")]
+[node name="house" parent="Ground" index="7" instance=ExtResource("7_kdxwv")]
 position = Vector2(-1251, 5157)
 rotation = 3.50113
 
-[node name="SteamVent" parent="Ground" index="6" instance=ExtResource("8_4c07p")]
+[node name="SteamVent" parent="Ground" index="8" instance=ExtResource("8_4c07p")]
 position = Vector2(-303, 1800)
 
-[node name="LightFanAnimation" parent="Ground" index="7" instance=ExtResource("9_ph7sh")]
+[node name="SteamVent2" parent="Ground" index="9" instance=ExtResource("8_4c07p")]
+position = Vector2(1049, 6096)
+
+[node name="SteamVent3" parent="Ground" index="10" instance=ExtResource("8_4c07p")]
+position = Vector2(4665, 2744)
+
+[node name="LightFanAnimation" parent="Ground" index="11" instance=ExtResource("9_ph7sh")]
 position = Vector2(-1839, 2535)
 
 [node name="Box" parent="." index="1" instance=ExtResource("14_l3ati")]
@@ -109,52 +130,77 @@ position = Vector2(1126, 871)
 collision_layer = 1
 collision_mask = 1
 
-[node name="Toilet" parent="." index="2" instance=ExtResource("15_owqa5")]
+[node name="Box2" parent="." index="2" instance=ExtResource("14_l3ati")]
+position = Vector2(4382, 4468)
+collision_layer = 1
+collision_mask = 1
+
+[node name="Box4" parent="." index="3" instance=ExtResource("14_l3ati")]
+position = Vector2(594, 5541)
+rotation = 3.14159
+collision_layer = 1
+collision_mask = 1
+
+[node name="Box3" parent="." index="4" instance=ExtResource("14_l3ati")]
+position = Vector2(4804, 2295)
+rotation = 1.5708
+collision_layer = 1
+collision_mask = 1
+
+[node name="Toilet" parent="." index="5" instance=ExtResource("15_owqa5")]
 position = Vector2(578, 866)
 collision_layer = 1
 collision_mask = 1
 
-[node name="TileMap" type="TileMap" parent="." index="3"]
+[node name="TileMap" type="TileMap" parent="." index="6"]
 position = Vector2(100, -1500)
 tile_set = SubResource("TileSet_jfwt1")
 format = 2
 layer_0/name = "Soil"
 layer_0/tile_data = PackedInt32Array(65534, 131073, 1, 131070, 131073, 1, 196606, 131073, 1, 262142, 131073, 2, -7, 65537, 0, -6, 65537, 0, -5, 65537, 0, -4, 65537, 0, -3, 65537, 0, 65528, 1, 1, 131064, 1, 1, 196600, 1, 1, 262137, 65537, 2, 262138, 65537, 2, 262139, 65537, 2, 262140, 65537, 2, 262141, 65537, 2, -2, 131073, 0, -8, 1, 0, 262136, 1, 2, 65529, 65537, 1, 131065, 65537, 1, 196601, 65537, 1, 65530, 65537, 1, 131066, 65537, 1, 196602, 65537, 1, 65531, 65537, 1, 131067, 65537, 1, 196603, 65537, 1, 65532, 65537, 1, 131068, 65537, 1, 196604, 65537, 1, 65533, 65537, 1, 131069, 65537, 1, 196605, 65537, 1, 4, 65537, 0, 65540, 65537, 1, 131076, 65537, 1, 196612, 65537, 2, 5, 65537, 0, 65541, 65537, 1, 131077, 65537, 1, 196613, 65537, 2, 6, 65537, 0, 65542, 65537, 1, 131078, 65537, 1, 196614, 65537, 2, 7, 65537, 0, 65543, 65537, 1, 131079, 65537, 1, 196615, 65537, 2, 8, 65537, 0, 65544, 65537, 1, 131080, 65537, 1, 196616, 65537, 2, 9, 65537, 0, 65545, 65537, 1, 131081, 65537, 1, 196617, 65537, 2, 10, 65537, 0, 65546, 65537, 1, 131082, 65537, 1, 196618, 65537, 2, 11, 65537, 0, 65547, 65537, 1, 131083, 65537, 1, 196619, 65537, 1, 12, 131073, 1, 65548, 131073, 1, 131084, 131073, 1, 196620, 131073, 1, 3, 1, 1, 65539, 1, 1, 131075, 1, 1, 196611, 1, 2, -65532, 65537, 0, -65531, 65537, 0, -65530, 65537, 0, -65529, 65537, 0, -65528, 65537, 0, -65527, 65537, 0, -65526, 65537, 0, -65525, 65537, 0, -65524, 131073, 0, -65533, 1, 0, 262156, 131073, 1, 327692, 131073, 1, 393228, 131073, 2, 262155, 1, 1, 327691, 1, 1, 393227, 1, 2)
 layer_1/name = "Walls"
-layer_1/tile_data = PackedInt32Array(262136, 0, 0, 262137, 65536, 0, 262138, 65536, 0, 262139, 65536, 0, 262140, 65536, 0, 262141, 65536, 0, 262142, 131072, 0, -65533, 0, 1, 3, 0, 2, 65539, 0, 2, 131075, 0, 2, 196611, 65536, 2, 196612, 65536, 0, 196613, 65536, 0, 196614, 65536, 0, 196615, 65536, 0, 196616, 65536, 0, 196617, 65536, 0, 196618, 65536, 0, 196619, 65536, 0, 196620, 131072, 1, 262156, 0, 2, 327692, 0, 2, 393228, 0, 2)
+layer_1/tile_data = PackedInt32Array(262136, 65536, 0, 262137, 65536, 0, 262138, 65536, 0, 262139, 65536, 0, 262140, 65536, 0, 262141, 65536, 0, 262142, 131072, 0, -65533, 0, 1, 3, 0, 2, 65539, 0, 2, 131075, 0, 2, 196611, 65536, 2, 196612, 65536, 0, 196613, 65536, 0, 196614, 65536, 0, 196615, 65536, 0, 196616, 65536, 0, 196617, 65536, 0, 196618, 65536, 0, 196619, 65536, 0, 196620, 131072, 1, 262156, 0, 2, 327692, 0, 2, 393228, 0, 2, 458764, 0, 2, 524300, 0, 2, 589836, 0, 2, 720908, 0, 2, 655372, 0, 2, 786444, 0, 2, 851980, 0, 2, 917516, 0, 2, 983052, 0, 2, 1048588, 131072, 2, 1048587, 65536, 0, 1048586, 65536, 0, 983049, 0, 2, 917513, 0, 2, 851977, 0, 2, 1048585, 65536, 2, 786441, 131072, 1, 786440, 65536, 0, 786439, 65536, 0, 786438, 65536, 1, 851974, 0, 2, 917510, 0, 2, 983046, 0, 2, 1048582, 0, 2, 1114118, 0, 2, 1179654, 131072, 2, 1179653, 65536, 0, 1179652, 65536, 0, 1179651, 65536, 0, 1179650, 65536, 0, 1179649, 65536, 0, 1179648, 65536, 2, 1114112, 0, 2, 1048576, 0, 2, 917504, 0, 2, 851968, 65536, 1, 983040, 0, 2, 851969, 65536, 0, 851970, 65536, 0, 262135, 65536, 0, 262134, 65536, 0, 262133, 65536, 0, 262132, 65536, 0, 262131, 0, 0, 851971, 131072, 2, 720899, 0, 2, 786435, 0, 2, 655363, 65536, 1, 655364, 65536, 0, 655366, 65536, 0, 655365, 65536, 0, 655367, 65536, 0, 655368, 65536, 0, 655369, 131072, 2, 589833, 0, 2, 524297, 0, 2, 458761, 0, 2, 393225, 0, 2, 983042, 65536, 0, 983043, 131072, 1, 983041, 0, 0, 1048579, 0, 3, 327689, 0, 1)
 
-[node name="gate" parent="." index="4" instance=ExtResource("2_p1a2k")]
+[node name="gate" parent="." index="7" instance=ExtResource("2_p1a2k")]
 position = Vector2(0, -251)
 
-[node name="ProjectTiles" parent="." index="6"]
+[node name="ProjectTiles" parent="." index="9"]
 position = Vector2(0, -1)
 
 [node name="Scout" parent="Enemies" index="0" instance=ExtResource("16_1se61")]
 position = Vector2(1920, 1308)
-collision_layer = 2
 collision_mask = 11
 
 [node name="Bug" parent="Enemies" index="1" instance=ExtResource("17_2wqpi")]
 position = Vector2(2672, 440)
 
 [node name="drone" parent="Enemies" index="2" instance=ExtResource("18_ub74t")]
-position = Vector2(1936, 2700)
+position = Vector2(-3969, -1151)
 
-[node name="UI" parent="." index="8" instance=ExtResource("16_jjr2r")]
+[node name="Hunter" parent="Enemies" index="3" instance=ExtResource("19_5npb0")]
+position = Vector2(4442, 3759)
 
-[node name="Item" parent="." index="9" instance=ExtResource("17_dlc27")]
+[node name="UI" parent="." index="11" instance=ExtResource("16_jjr2r")]
+
+[node name="Item" parent="." index="12" instance=ExtResource("17_dlc27")]
 position = Vector2(252, 441)
 
-[node name="player" parent="." index="10"]
-position = Vector2(583, 364)
+[node name="player" parent="." index="13"]
+position = Vector2(1656, 204)
 
-[node name="CarPath" type="Path2D" parent="." index="12"]
+[node name="Camera2D" parent="player" index="6"]
+metadata/_edit_lock_ = true
+
+[node name="CarPath" type="Path2D" parent="." index="15"]
 curve = SubResource("Curve2D_0p4eo")
 
 [node name="Car" parent="CarPath" index="0" instance=ExtResource("21_sapxu")]
 position = Vector2(633.861, 1939.75)
 rotation = 1.28372
 progress = 923.245
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="." index="16"]
+navigation_polygon = SubResource("NavigationPolygon_020kh")
 
 [connection signal="player_entered" from="Ground/house" to="." method="_on_house_player_entered"]
 [connection signal="player_exit" from="Ground/house" to="." method="_on_house_player_exit"]
